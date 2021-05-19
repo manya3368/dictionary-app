@@ -1,22 +1,24 @@
-
-import React,{Component} from 'react';
-import HomeScreen from './HomeScreen';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-   <HomeScreen/>
-    </View>
-  );
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import HomeScreen from './screens.js/HomeScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+export default class App extends React.Component {
+  render() {
+    return (
+      <SafeAreaProvider>
+      <View style={styles.container}>
+        <HomeScreen />
+      </View>
+      </SafeAreaProvider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'maroon',
   },
 });
+
+  
